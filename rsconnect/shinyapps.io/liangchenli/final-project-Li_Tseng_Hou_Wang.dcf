@@ -1,0 +1,14 @@
+name: final-project-Li_Tseng_Hou_Wang
+title: final-project-Li_Tseng_Hou_Wang
+username:
+account: liangchenli
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5296068
+bundleId: 5348387
+url: https://liangchenli.shinyapps.io/final-project-Li_Tseng_Hou_Wang/
+when: 1639020770.77365
+lastSyncTime: 1639020770.77366
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|index.rmd|map_Li.R|www/.DS_Store

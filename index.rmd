@@ -1,0 +1,85 @@
+---
+title: "Exploratory Analysis"
+author: "Li_Tseng_Hou_Wang"
+date: "2021/11/19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This dataset was collected from Apple’s Maps app which was collected through user devices. The dataset provides visualization of changes in transportation usage patterns of people during the COVID-19 pandemic. Such visualizations help us understand the behavioral changes of people in the United States maneuvered by the devastating global pandemic. Our dataset provides information on transportation types, occurring dates, and mobility changes. 
+
+
+
+## Summary Information
+
+In the Summary information, a function that takes in a dataset and returns a list of info about it. We have 3102 rows in the dataset, 658 columns in the dataset, and there are 1536 unique cities in the dataset which helps to analyze the trends of transportation after the pandemic started. On the first day, driving rates changed mostly from the city Butler county, for transit, it was Annapolis, and for walking was Milwaukee county.
+
+
+```{r, echo=FALSE,message = FALSE}
+source("Summary information.r")
+show(paste("number of rows:", rows_count))
+show(paste("number of columns:", col_count))
+show(paste("number of cities:", num_city))
+show(paste("most impacted cities(driving, 1st day):", Driving_info))
+show(paste("most impacted cities(walking, 1st day):", Walking_info))
+```
+## Table
+
+In the table, the first row of the table is all column names in the dataset, and it contains all data changed during the pandemic time. The table filtered down all data which only happened in the United States city and county, which was how the transportation trends had changed because of the COVID-19. It also revealed the relationship between region, subregion, and change of the transportation type. 
+
+
+```{r, echo=FALSE, message = FALSE}
+
+source("TABLE.r")
+library(rmarkdown)
+paged_table(final_table)
+
+```
+
+## Chart 1: Scatter Plot
+
+This chart was intended to show the rate of transit transportation changed after the pandemic. It shows all cities in the United States and shows the rate of change in transit transportation by each state. In the chart, the data has decreased sharply at the very beginning of the pandemic, Then it has steadily kept the level between 2020-2021, but after 2021, the rate of taking transit as the transportation has gradually increased. Therefore, this scatter plot showed how the transit using rate changed after the pandemic. 
+
+
+```{r, echo=FALSE, results='hide',message = FALSE, warning=FALSE}
+source("Chart1.r")
+
+show(linear_regression)
+```
+
+
+## Chart 2: Pie Chart
+
+This chart was intended to show the percentage of transportation modes in the United States between driving, walking and public transits. It shows the count for each transit and driving has been the most used transportation type during the pandemic.
+
+
+```{r, echo=FALSE, results='hide',message = FALSE}
+
+source("chart2.r")
+
+show(pie_chart)
+
+```
+
+## Chart 3: Map
+
+We took the standard deviation of people’s mobility data during the pandemic. This chart is intended to show how people changed their mobility pattern during Covid. 
+
+For both state level and county level, the map charts show that people in the middle west and north east part of  the country have changed their mobility more. At the same time, the other parts of the country still have relatively great changes. With a more detailed look into the type of transportation that have been mostly impacted by Covid is driving in middle states, and walking in coastal states. With the assumption that people in areas with less population use driving as their primary transportation method, while people in dense cities walk more often, the map charts indicate that people have changed frequency of using their primary transportation option.
+
+
+
+```{r, echo=FALSE, results='hide',message = FALSE}
+
+source("map_Li.r")
+
+show(final_graph)
+
+```
+
+
